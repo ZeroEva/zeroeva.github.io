@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="ZeroEva">
 <meta property="og:description" content="Python 的数据类型:   数据类型 示例     整型 255   浮点型 10.24   字符串 zero    布尔 True/False   空类型 None    示例代码1234567891011121314151617181920212223242526272829303132333435363738394041#!/usr/bin/env python3# -*- cod">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-11T09:00:55.136Z">
+<meta property="og:updated_time" content="2019-02-11T09:47:05.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day1">
 <meta name="twitter:description" content="Python 的数据类型:   数据类型 示例     整型 255   浮点型 10.24   字符串 zero    布尔 True/False   空类型 None    示例代码1234567891011121314151617181920212223242526272829303132333435363738394041#!/usr/bin/env python3# -*- cod">
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 327 个字)
+                    2 分钟 读完 (大约 322 个字)
                 </span>
                 
                 
@@ -195,7 +195,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># 输出多行文本</span></span><br><span class="line">print(<span class="hljs-string">r'''hello</span></span><br><span class="line"><span class="hljs-string">a</span></span><br><span class="line"><span class="hljs-string">b</span></span><br><span class="line"><span class="hljs-string">world'''</span>)</span><br><span class="line"><span class="hljs-comment"># and or not 用法</span></span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">not</span> <span class="hljs-keyword">True</span>)</span><br><span class="line">x = <span class="hljs-keyword">None</span></span><br><span class="line">print(x)</span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 Unicode 码</span></span><br><span class="line">print(ord(<span class="hljs-string">'a'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 Unicode 码转换为 字符</span></span><br><span class="line">print(chr(<span class="hljs-number">91</span>))</span><br><span class="line"><span class="hljs-comment"># Python 中几种特殊的表示:</span></span><br><span class="line"><span class="hljs-comment"># b'xxx': xxx 表示 二进制</span></span><br><span class="line"><span class="hljs-comment"># f'xxx' 或 F'xxx': xxx 表示 运行时运算求值的表达式 (f-string)</span></span><br><span class="line"><span class="hljs-comment"># r'xxx': xxx 表示 纯的字符串</span></span><br><span class="line"><span class="hljs-comment"># u'xxx': xxx 表示 Unicode 编码</span></span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 二进制</span></span><br><span class="line">print(<span class="hljs-string">'我'</span>.encode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 二进制 转换为 字符</span></span><br><span class="line">print(<span class="hljs-string">b'\xe6\x88\xaa'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">b'\x64'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">u'\x64'</span>)</span><br><span class="line"><span class="hljs-comment"># 格式化占位符    替换内容</span></span><br><span class="line"><span class="hljs-comment"># %d        整数</span></span><br><span class="line"><span class="hljs-comment"># %'2'd     '2' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'空格'</span></span><br><span class="line"><span class="hljs-comment"># %'03'd    '3' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'0'</span></span><br><span class="line"><span class="hljs-comment"># %f        浮点数</span></span><br><span class="line"><span class="hljs-comment"># %'.2'f    '.2' 指的是格式化后的数据保留小数点后 '2', 位数不够的补'0'</span></span><br><span class="line"><span class="hljs-comment"># %s    字符串</span></span><br><span class="line"><span class="hljs-comment"># %x    十六进制整数</span></span><br><span class="line"><span class="hljs-comment"># %%    输出百分号</span></span><br><span class="line">print(<span class="hljs-string">f'%2d-%03d'</span> % (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>))</span><br><span class="line">print(<span class="hljs-string">'%.2f'</span> % <span class="hljs-number">3.1415926</span>)</span><br><span class="line">print(<span class="hljs-string">'Hello, &#123;0&#125;, 成绩提升了 &#123;1:.2f&#125;%'</span>.format(<span class="hljs-string">'小明'</span>, <span class="hljs-number">17.125</span>))</span><br><span class="line">print(<span class="hljs-string">'growth rate: %d %%'</span> % <span class="hljs-number">7</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># 输出多行文本</span></span><br><span class="line">print(<span class="hljs-string">r'''hello</span></span><br><span class="line"><span class="hljs-string">a</span></span><br><span class="line"><span class="hljs-string">b</span></span><br><span class="line"><span class="hljs-string">world'''</span>)</span><br><span class="line"><span class="hljs-comment"># and or not 用法</span></span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">not</span> <span class="hljs-keyword">True</span>)</span><br><span class="line">x = <span class="hljs-keyword">None</span></span><br><span class="line">print(x)</span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 Unicode 码</span></span><br><span class="line">print(ord(<span class="hljs-string">'a'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 Unicode 码转换为 字符</span></span><br><span class="line">print(chr(<span class="hljs-number">91</span>))</span><br><span class="line"><span class="hljs-comment"># Python 中几种特殊的表示:</span></span><br><span class="line"><span class="hljs-comment"># b'xxx': xxx 表示 二进制</span></span><br><span class="line"><span class="hljs-comment"># f'xxx' 或 F'xxx': xxx 表示 运行时运算求值的表达式 (f-string)</span></span><br><span class="line"><span class="hljs-comment"># r'xxx': xxx 表示 纯的字符串</span></span><br><span class="line"><span class="hljs-comment"># u'xxx': xxx 表示 Unicode 编码</span></span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 二进制</span></span><br><span class="line">print(<span class="hljs-string">'我'</span>.encode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 二进制 转换为 字符</span></span><br><span class="line">print(<span class="hljs-string">b'\xe6\x88\xaa'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">b'\x64'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">u'\x64'</span>)</span><br><span class="line"><span class="hljs-comment"># 格式化占位符    替换内容</span></span><br><span class="line"><span class="hljs-comment"># %d        整数</span></span><br><span class="line"><span class="hljs-comment"># %'2'd     '2' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'空格'</span></span><br><span class="line"><span class="hljs-comment"># %'03'd    '3' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'0'</span></span><br><span class="line"><span class="hljs-comment"># %f        浮点数</span></span><br><span class="line"><span class="hljs-comment"># %'.2'f    '.2' 指的是格式化后的数据保留小数点后 '2', 位数不够的补'0'</span></span><br><span class="line"><span class="hljs-comment"># %s    字符串</span></span><br><span class="line"><span class="hljs-comment"># %x    十六进制整数</span></span><br><span class="line"><span class="hljs-comment"># %%    输出百分号</span></span><br><span class="line">print(<span class="hljs-string">f'%2d-%03d'</span> % (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>))</span><br><span class="line">print(<span class="hljs-string">'%.2f'</span> % <span class="hljs-number">3.1415926</span>)</span><br><span class="line">print(Hello.md.format(<span class="hljs-string">'小明'</span>, <span class="hljs-number">17.125</span>))</span><br><span class="line">print(<span class="hljs-string">'growth rate: %d %%'</span> % <span class="hljs-number">7</span>)</span><br></pre></td></tr></table></figure>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -250,6 +250,20 @@
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/11/Hello/">
+                <span class="level-item">嗨, 很高兴你能找到我~ 这是一个值得令人向往的世界</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
 
 </div>
                 
@@ -284,6 +298,19 @@
                         <span>北京, 石景山</span>
                     </p>
                     
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fab fa-weixin has-mr-7"></i>
+                        <i class="fab fa-qq has-mr-7"></i>
+                        <span>2721002772</span>
+                    </p>
+                    
+                    
+                    <p class="is-size-8 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-mobile"></i>
+                        <span>18547180218</span>
+                    </p>
+                    
                 </div>
             </div>
         </nav>
@@ -296,7 +323,7 @@
                             文章
                         </p>
                         <p class="title has-text-weight-normal">
-                            1
+                            2
                         </p>
                     
                 </a></div>
@@ -323,7 +350,7 @@
             </div>
         </nav>
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="http://github.com/ppoffice">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ZeroEva">
                 关注我</a>
         </div>
         
@@ -348,8 +375,6 @@
 </div>
     
         
-    
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=2660107730&auto=1&height=430"></iframe>
     
         
 
@@ -452,6 +477,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/02/11/Hello/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="嗨, 很高兴你能找到我~ 这是一个值得令人向往的世界">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T12:02:18.000Z">2019-02-11</time></div>
+                    <a href="/2019/02/11/Hello/" class="has-link-black-ter is-size-6">嗨, 很高兴你能找到我~ 这是一个值得令人向往的世界</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -470,7 +514,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -499,6 +543,8 @@
         </div>
     </div>
 </div>
+        
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=2660107730&auto=1&height=430"></iframe>
         
         </div>
     
@@ -537,6 +583,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2019/02/11/Hello/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="嗨, 很高兴你能找到我~ 这是一个值得令人向往的世界">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T12:02:18.000Z">2019-02-11</time></div>
+                    <a href="/2019/02/11/Hello/" class="has-link-black-ter is-size-6">嗨, 很高兴你能找到我~ 这是一个值得令人向往的世界</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -555,7 +620,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -584,6 +649,8 @@
         </div>
     </div>
 </div>
+    
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=2660107730&auto=1&height=430"></iframe>
     
     
 </div>
