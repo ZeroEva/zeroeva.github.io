@@ -19,7 +19,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/favicon.png">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -85,7 +85,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="ZeroEva" height="28">
+                <img src="/images/favicon.png" alt="ZeroEva" height="28">
             
             </a>
         </div>
@@ -93,15 +93,15 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/">首页</a>
                 
-                <a class="navbar-item" href="/分类">Categories</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item" href="/标签">Tags</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item" href="/归档">Archives</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item" href="/关于">About</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -143,10 +143,14 @@
                 
                 <div class="media-content">
                     <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-02-08T13:51:28.092Z">2019-02-08</time>
-                        <a href="/2019/02/08/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time>
+                        <a href="/2019/02/12/Python-Day1/" class="has-link-black-ter is-size-6">Day1</a>
                         <div class="level article-meta is-mobile">
                             <div class="level-left">
+                                
+                                <div class="level-item is-size-7 is-uppercase">
+                                <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
+                                </div>
                                 
                             </div>
                         </div>
@@ -174,22 +178,22 @@
             <div class="level-item has-text-centered">
                 <div>
                     
-                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
+                        <img class="image is-128x128 has-mb-6" src="/images/hxf.jpg" alt="郝雪峰">
                     
                     
                     <p class="is-size-4 is-block">
-                        Your name
+                        郝雪峰
                     </p>
                     
                     
                     <p class="is-size-6 is-block">
-                        Your title
+                        From zero, to zero.
                     </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Your location</span>
+                        <span>北京, 石景山</span>
                     </p>
                     
                 </div>
@@ -198,8 +202,21 @@
         <nav class="level is-mobile">
             <div class="level-item has-text-centered is-marginless">
                 <div>
+                    <!-- TODO -->
+                    <a href="#">
+                        <p class="heading">
+                            文章
+                        </p>
+                        <p class="title has-text-weight-normal">
+                            1
+                        </p>
+                    
+                </a></div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
                     <p class="heading">
-                        文章
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -209,20 +226,10 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        分类
-                    </p>
-                    <p class="title has-text-weight-normal">
-                        0
-                    </p>
-                </div>
-            </div>
-            <div class="level-item has-text-centered is-marginless">
-                <div>
-                    <p class="heading">
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        0
+                        1
                     </p>
                 </div>
             </div>
@@ -247,30 +254,14 @@
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="#">
-                
-                <i class="fab fa-twitter"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="#">
-                
-                <i class="fab fa-dribbble"></i>
-                
-            </a>
-            
-            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
-                
-                <i class="fas fa-rss"></i>
-                
-            </a>
-            
         </div>
         
     </div>
 </div>
     
         
+    
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="450" src="//music.163.com/outchain/player?type=0&id=2660107730&auto=1&height=430"></iframe>
     
         
 
@@ -319,13 +310,30 @@
                 分类
             </h3>
             <ul class="menu-list">
-            
+            <li>
+        <a class="level is-marginless" href="/categories/Python-基础/">
+            <span class="level-start">
+                <span class="level-item">Python 基础</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
             </ul>
         </div>
     </div>
 </div>
     
         
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+</div>
+
     
     
         <div class="column-right-shadow is-hidden-widescreen ">
@@ -339,18 +347,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/08/hello-world/" class="media-left">
+            <a href="/2019/02/12/Python-Day1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-08T13:51:28.092Z">2019-02-08</time></div>
-                    <a href="/2019/02/08/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time></div>
+                    <a href="/2019/02/12/Python-Day1/" class="has-link-black-ter is-size-6">Day1</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
                     </p>
                 </div>
             </div>
@@ -391,6 +399,13 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
                 
             </div>
         </div>
@@ -417,18 +432,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/08/hello-world/" class="media-left">
+            <a href="/2019/02/12/Python-Day1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-08T13:51:28.092Z">2019-02-08</time></div>
-                    <a href="/2019/02/08/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time></div>
+                    <a href="/2019/02/12/Python-Day1/" class="has-link-black-ter is-size-6">Day1</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
                     </p>
                 </div>
             </div>
@@ -470,6 +485,13 @@
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Python/">
+                        <span class="tag">Python</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -487,7 +509,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="ZeroEva" height="28">
+                    <img src="/images/favicon.png" alt="ZeroEva" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -497,35 +519,6 @@
                 </p>
             </div>
             <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="#">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="#">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ZeroEva">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
             
             </div>
         </div>
