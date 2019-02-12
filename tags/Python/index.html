@@ -75,6 +75,10 @@
     
     
     
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -147,7 +151,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time>
+                <time class="level-item has-text-grey" datetime="2019-02-12T10:02:46.000Z">2019-02-12</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
@@ -157,7 +161,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 322 个字)
+                    几秒 读完 (大约 89 个字)
                 </span>
                 
                 
@@ -166,44 +170,67 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/02/12/Python-Day1/">Day1</a>
+                <a class="has-link-black-ter" href="/2019/02/12/Day2/">Day2-集合</a>
             
         </h1>
         <div class="content">
-             <table> </table>
-<h1 id="Python-的数据类型"><a href="#Python-的数据类型" class="headerlink" title="Python 的数据类型:"></a>Python 的数据类型:</h1><table>
+            <h1 id="Python-的集合-数组"><a href="#Python-的集合-数组" class="headerlink" title="Python 的集合(数组)"></a>Python 的集合(数组)</h1><p>Python 共有四种集合</p>
+<table>
 <thead>
 <tr>
-<th>数据类型</th>
-<th>示例</th>
+<th>Collection</th>
+<th>Change</th>
+<th>Order</th>
+<th>Duplicate</th>
+<th>Index</th>
+<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>整型</td>
-<td>255</td>
+<td>列表(List)</td>
+<td>可变</td>
+<td>有序</td>
+<td>元素可重复</td>
+<td>无索引</td>
+<td>[a, b, a]</td>
 </tr>
 <tr>
-<td>浮点型</td>
-<td>10.24</td>
+<td>元组(Tuple)</td>
+<td>不可变</td>
+<td>有序</td>
+<td>元素可重复</td>
+<td>无索引</td>
+<td>(a, b, a)</td>
 </tr>
 <tr>
-<td>字符串</td>
-<td>zero </td>
+<td>集合(Set)</td>
+<td>可变</td>
+<td>无序</td>
+<td>不可重复</td>
+<td>无索引</td>
+<td>{a, b}</td>
 </tr>
 <tr>
-<td>布尔</td>
-<td>True/False</td>
-</tr>
-<tr>
-<td>空类型</td>
-<td>None</td>
+<td>字典(Dictionary)</td>
+<td>可变</td>
+<td>无序</td>
+<td>不可重复</td>
+<td>有索引</td>
+<td>{key: value}</td>
 </tr>
 </tbody>
 </table>
-<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="hljs-comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="hljs-comment"># 输出多行文本</span></span><br><span class="line">print(<span class="hljs-string">r'''hello</span></span><br><span class="line"><span class="hljs-string">a</span></span><br><span class="line"><span class="hljs-string">b</span></span><br><span class="line"><span class="hljs-string">world'''</span>)</span><br><span class="line"><span class="hljs-comment"># and or not 用法</span></span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">True</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">False</span>)</span><br><span class="line">print(<span class="hljs-keyword">not</span> <span class="hljs-keyword">True</span>)</span><br><span class="line">x = <span class="hljs-keyword">None</span></span><br><span class="line">print(x)</span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 Unicode 码</span></span><br><span class="line">print(ord(<span class="hljs-string">'a'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 Unicode 码转换为 字符</span></span><br><span class="line">print(chr(<span class="hljs-number">91</span>))</span><br><span class="line"><span class="hljs-comment"># Python 中几种特殊的表示:</span></span><br><span class="line"><span class="hljs-comment"># b'xxx': xxx 表示 二进制</span></span><br><span class="line"><span class="hljs-comment"># f'xxx' 或 F'xxx': xxx 表示 运行时运算求值的表达式 (f-string)</span></span><br><span class="line"><span class="hljs-comment"># r'xxx': xxx 表示 纯的字符串</span></span><br><span class="line"><span class="hljs-comment"># u'xxx': xxx 表示 Unicode 编码</span></span><br><span class="line"><span class="hljs-comment"># 将 字符 转换为 二进制</span></span><br><span class="line">print(<span class="hljs-string">'我'</span>.encode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line"><span class="hljs-comment"># 将 二进制 转换为 字符</span></span><br><span class="line">print(<span class="hljs-string">b'\xe6\x88\xaa'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">b'\x64'</span>.decode(<span class="hljs-string">'UTF-8'</span>))</span><br><span class="line">print(<span class="hljs-string">u'\x64'</span>)</span><br><span class="line"><span class="hljs-comment"># 格式化占位符    替换内容</span></span><br><span class="line"><span class="hljs-comment"># %d        整数</span></span><br><span class="line"><span class="hljs-comment"># %'2'd     '2' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'空格'</span></span><br><span class="line"><span class="hljs-comment"># %'03'd    '3' 指的是在输出内容中, 格式化后的数据(至少)占的位数，多余的位数补'0'</span></span><br><span class="line"><span class="hljs-comment"># %f        浮点数</span></span><br><span class="line"><span class="hljs-comment"># %'.2'f    '.2' 指的是格式化后的数据保留小数点后 '2', 位数不够的补'0'</span></span><br><span class="line"><span class="hljs-comment"># %s    字符串</span></span><br><span class="line"><span class="hljs-comment"># %x    十六进制整数</span></span><br><span class="line"><span class="hljs-comment"># %%    输出百分号</span></span><br><span class="line">print(<span class="hljs-string">f'%2d-%03d'</span> % (<span class="hljs-number">3</span>, <span class="hljs-number">1</span>))</span><br><span class="line">print(<span class="hljs-string">'%.2f'</span> % <span class="hljs-number">3.1415926</span>)</span><br><span class="line">print(Hello.md.format(<span class="hljs-string">'小明'</span>, <span class="hljs-number">17.125</span>))</span><br><span class="line">print(<span class="hljs-string">'growth rate: %d %%'</span> % <span class="hljs-number">7</span>)</span><br></pre></td></tr></table></figure>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/12/Day2/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -216,13 +243,14 @@
 
 
 
+
 </div>
                 
 
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -274,7 +302,7 @@
                             文章
                         </p>
                         <p class="title has-text-weight-normal">
-                            2
+                            3
                         </p>
                     
                 </a></div>
@@ -380,7 +408,7 @@
                 <span class="level-item">Python 基础</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -399,8 +427,10 @@
 </div>
 
     
+        
     
-        <div class="column-right-shadow is-hidden-widescreen ">
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
         
             
 <div class="card widget">
@@ -411,16 +441,35 @@
         
         <article class="media">
             
-            <a href="/2019/02/12/Python-Day1/" class="media-left">
+            <a href="/2019/02/12/Day2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day2-集合">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T10:02:46.000Z">2019-02-12</time></div>
+                    <a href="/2019/02/12/Day2/" class="has-link-black-ter is-size-6">Day2-集合</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/12/Day1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1-数据类型">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time></div>
-                    <a href="/2019/02/12/Python-Day1/" class="has-link-black-ter is-size-6">Day1</a>
+                    <a href="/2019/02/12/Day1/" class="has-link-black-ter is-size-6">Day1-数据类型</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
                     </p>
@@ -465,7 +514,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -506,7 +555,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right is-sticky">
     
         
 <div class="card widget">
@@ -517,16 +566,35 @@
         
         <article class="media">
             
-            <a href="/2019/02/12/Python-Day1/" class="media-left">
+            <a href="/2019/02/12/Day2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day2-集合">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T10:02:46.000Z">2019-02-12</time></div>
+                    <a href="/2019/02/12/Day2/" class="has-link-black-ter is-size-6">Day2-集合</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/12/Day1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Day1-数据类型">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-11T16:01:08.000Z">2019-02-11</time></div>
-                    <a href="/2019/02/12/Python-Day1/" class="has-link-black-ter is-size-6">Day1</a>
+                    <a href="/2019/02/12/Day1/" class="has-link-black-ter is-size-6">Day1-数据类型</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Python-基础/">Python 基础</a>
                     </p>
@@ -571,7 +639,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -621,6 +689,11 @@
                 <p class="is-size-7">
                 &copy; 2019 Xuefeng Hao&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
                 
                 </p>
             </div>
@@ -723,6 +796,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     
+    
+
     
 
 
