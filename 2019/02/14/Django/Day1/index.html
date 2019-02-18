@@ -2,19 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>分类 - ZeroEva</title>
+<title>Day1 - ZeroEva</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="keywords" content="java,selenium,Python,django,web,RabbitMQ,Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZeroEva">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+    <meta name="description" content="django 环境安装">
+<meta name="keywords" content="Python,django,web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day1">
+<meta property="og:url" content="http://yoursite.com/2019/02/14/Django/Day1/index.html">
 <meta property="og:site_name" content="ZeroEva">
+<meta property="og:description" content="django 环境安装">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-18T07:24:49.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZeroEva">
+<meta name="twitter:title" content="Day1">
+<meta name="twitter:description" content="django 环境安装">
 
 
 
@@ -90,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                <img src="/images/favicon.png" alt="Day1" height="28">
             
             </a>
         </div>
@@ -102,7 +106,7 @@
                 
                 <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item is-active" href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
                 <a class="navbar-item" href="/tags">标签</a>
                 
@@ -135,59 +139,139 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://files.catbox.moe/1q1vyy.jpg" alt="Day1">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-14T15:35:57.000Z">2019-02-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Python/Python-Web/">Python Web</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 289 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Day1
+            
+        </h1>
+        <div class="content">
+            <h1 id="django-环境安装"><a href="#django-环境安装" class="headerlink" title="django 环境安装"></a>django 环境安装</h1><a id="more"></a>
+<p>在控制台中，输入 pip install django 回车，等待安装完毕，然后输入 python -m django –version 查看版本，如有则安装成功  </p>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>在控制台中，输入 django-admin startproject mysite 回车(其中 mysite 是你的项目名称)，则会在当前目录下创建一个名称为 mysite 的项目  </p>
+<h4 id="目录结构如下"><a href="#目录结构如下" class="headerlink" title="目录结构如下:"></a>目录结构如下:</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite</span><br><span class="line">  │  manage.py</span><br><span class="line">  └─mysite</span><br><span class="line">      │  settings.py</span><br><span class="line">      │  urls.py</span><br><span class="line">      │  wsgi.py</span><br><span class="line">      │  __init__.py</span><br></pre></td></tr></table></figure>
+<p>####目录说明:   </p>
+<ul>
+<li>mysite: 项目目录  </li>
+<li>manage.py: 一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 <a href="https://docs.djangoproject.com/zh-hans/2.1/ref/django-admin/" target="_blank" rel="noopener">django-admin and manage.py</a> 获取所有 manage.py 的细节。  </li>
+<li>mysite/mysite: 这个目录包含你的项目，它是一个纯 Python 包  </li>
+<li>mysite/settings.py: Django 项目的配置文件。  </li>
+<li>mysite/urls.py: Django 项目的 URL 声明，就像你网站的“目录”。  </li>
+<li>mysite/wsgi.py: 作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。  </li>
+<li>mysite/__init__.py: 一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。  </li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Python/">Python</a>, <a class="has-link-grey -link" href="/tags/django/">django</a>, <a class="has-link-grey -link" href="/tags/web/">web</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/15/My/简历/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">我的简历</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/14/百度翻译API破解 基于Java和Selenium/">
+                <span class="level-item">百度翻译API破解 基于Java和Selenium</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+<div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/MQ/">
-            <span class="level-start">
-                <span class="level-item">MQ</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/MQ/RabbitMQ/">
-            <span class="level-start">
-                <span class="level-item">RabbitMQ</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Python/">
-            <span class="level-start">
-                <span class="level-item">Python</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Python/Python-Web/">
-            <span class="level-start">
-                <span class="level-item">Python Web</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/Python/Python-基础/">
-            <span class="level-start">
-                <span class="level-item">Python 基础</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">2</span>
-            </span>
-        </a></li></ul></li>
-            </ul>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
         </div>
     </div>
-</div></div>
+</div>
+
+</div>
                 
 
 
@@ -818,7 +902,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                    <img src="/images/favicon.png" alt="Day1" height="28">
                 
                 </a>
                 <p class="is-size-7">
