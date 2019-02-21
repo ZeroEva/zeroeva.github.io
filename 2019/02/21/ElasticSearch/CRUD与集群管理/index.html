@@ -2,18 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: Java - ZeroEva</title>
+<title>CRUD与集群管理 - ZeroEva</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ZeroEva">
-<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
+    <meta name="description" content="基础操作">
+<meta name="keywords" content="ElasticSearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CRUD与集群管理">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/ElasticSearch/CRUD与集群管理/index.html">
 <meta property="og:site_name" content="ZeroEva">
+<meta property="og:description" content="基础操作">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-21T03:24:43.964Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZeroEva">
+<meta name="twitter:title" content="CRUD与集群管理">
+<meta name="twitter:description" content="基础操作">
 
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                <img src="/images/favicon.png" alt="CRUD与集群管理" height="28">
             
             </a>
         </div>
@@ -135,67 +140,87 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/1595850/pexels-photo-1595850.jpeg" alt="RabbitMQ 生产确认和消费确认(保证数据的幂等性)">
-        </a>
-    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-18T15:22:28.000Z">2019-02-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/MQ/">MQ</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/MQ/RabbitMQ/">RabbitMQ</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 768 个字)
+                    1 分钟 读完 (大约 144 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/">RabbitMQ 生产确认和消费确认(保证数据的幂等性)</a>
+                CRUD与集群管理
             
         </h1>
         <div class="content">
-            <h1 id="生产确认"><a href="#生产确认" class="headerlink" title="生产确认"></a>生产确认</h1><p>在生产者生产数据之后发送到RabbitMQ服务器之后，为了确认服务器接收到没，RabbitMQ提供了两个方式：  </p>
-<ul>
-<li>AMQP 中的事务机制</li>
-<li>服务器Confirm模式</li>
+            <h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1><a id="more"></a>
+<h4 id="快速检查集群的健康状况"><a href="#快速检查集群的健康状况" class="headerlink" title="快速检查集群的健康状况"></a>快速检查集群的健康状况</h4><p>GET /_cat/health?v</p>
+<h4 id="快速查看集群中有哪些索引"><a href="#快速查看集群中有哪些索引" class="headerlink" title="快速查看集群中有哪些索引"></a>快速查看集群中有哪些索引</h4><p>GET /_cat/indices?v</p>
+<h4 id="索引操作"><a href="#索引操作" class="headerlink" title="索引操作"></a>索引操作</h4><p>创建索引: PUT /test_index<br>删除索引: DELETE /test_index</p>
+<h4 id="CRUD"><a href="#CRUD" class="headerlink" title="CRUD"></a>CRUD</h4><ul>
+<li><p>新增语法: PUT /index/type/id</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT /goods/product/1</span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;gaolujie yagao&quot;,</span><br><span class="line">    &quot;desc&quot;: &quot;gaoxiao meibai&quot;,</span><br><span class="line">    &quot;price&quot;: 30,</span><br><span class="line">    &quot;product&quot;: &quot;gaolujie producer&quot;,</span><br><span class="line">    &quot;tags&quot;: [&quot;meibai&quot;, &quot;gaoxiao&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换语法: PUT /index/type/id<br>必须带上多有的信息</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PUT /goods/product/1</span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;gaolujie yagao&quot;,</span><br><span class="line">    &quot;desc&quot;: &quot;gaoxiao meibai&quot;,</span><br><span class="line">    &quot;price&quot;: 35,</span><br><span class="line">    &quot;product&quot;: &quot;gaolujie producer&quot;,</span><br><span class="line">    &quot;tags&quot;: [&quot;qingjie&quot;, &quot;kuaisu&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新语法: POST /index/type/id<br>更新某些个字段</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">POST /goods/product/1/_update</span><br><span class="line">&#123;</span><br><span class="line">  &quot;doc&quot;: &#123;</span><br><span class="line">    &quot;price&quot;: 10</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除语法: DELETE /index/type/id  </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE /goods/product/1</span><br></pre></td></tr></table></figure></li>
 </ul>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ElasticSearch/">ElasticSearch</a>
                 </div>
             </div>
         </div>
         
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/21/ElasticSearch/搜索方式/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">搜索方式</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/">
+                <span class="level-item">RabbitMQ 生产确认和消费确认(保证数据的幂等性)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
@@ -205,8 +230,39 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 </div>
                 
@@ -853,7 +909,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                    <img src="/images/favicon.png" alt="CRUD与集群管理" height="28">
                 
                 </a>
                 <p class="is-size-7">

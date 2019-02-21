@@ -137,6 +137,105 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
     <div class="card">
     
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 分钟 读完 (大约 289 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/21/ElasticSearch/搜索方式/">搜索方式</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="搜索方式"><a href="#搜索方式" class="headerlink" title="搜索方式"></a>搜索方式</h1><h3 id="query-string-search"><a href="#query-string-search" class="headerlink" title="query string search"></a>query string search</h3><p>搜索全部商品<br>语法: GET /index/type/_search<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br></pre></td></tr></table></figure></p>
+<h3 id="query-DSL"><a href="#query-DSL" class="headerlink" title="query DSL"></a>query DSL</h3><p>DSL: Domain Specified Language 特定领域的语言<br>语法: GET /index/type/_search<br>查询符合条件的所有:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查询并排序:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match&quot;: &#123;</span><br><span class="line">            &quot;name&quot;: &quot;yagao&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;sort&quot;: [</span><br><span class="line">        &#123;&quot;price&quot;: &quot;desc&quot;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>分页查询:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;from&quot;: 1,</span><br><span class="line">    &quot;size&quot;: 1</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>指定查询某些字段:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;_source&quot;: [&quot;name&quot;, &quot;price&quot;]</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="query-filter-搜索商品并过滤"><a href="#query-filter-搜索商品并过滤" class="headerlink" title="query filter (搜索商品并过滤)"></a>query filter (搜索商品并过滤)</h3><p>搜索name包含yagao, 且价格大于30<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;bool&quot;: &#123;</span><br><span class="line">            &quot;must&quot;: &#123;</span><br><span class="line">                &quot;match&quot;: &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;yagao&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;filter&quot;: &#123;</span><br><span class="line">                &quot;range&quot;: &#123;</span><br><span class="line">                    &quot;price&quot;: &#123;&quot;gt&quot;: 25&#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;_source&quot;: [&quot;name&quot;, &quot;price&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="full-text-search-全文检索"><a href="#full-text-search-全文检索" class="headerlink" title="full-text search (全文检索)"></a>full-text search (全文检索)</h3><p>全文检索会将输入的搜索串拆解开，去倒排索引里面去一一匹配，只要能匹配上任一拆解后的单词，就可以作为结果返回<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match&quot;: &#123;</span><br><span class="line">            &quot;product&quot;: &quot;yagao producer&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="phrase-search-短语搜索"><a href="#phrase-search-短语搜索" class="headerlink" title="phrase search (短语搜索)"></a>phrase search (短语搜索)</h3><p>和全文检索对应，相反，短语搜索则是要搜索的字段必须被包含在存储的字段中，才可以匹配成功<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_phrase&quot;: &#123;</span><br><span class="line">            &quot;product&quot;: &quot;yagao producer&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="highlight-search-高亮搜索结果"><a href="#highlight-search-高亮搜索结果" class="headerlink" title="highlight search (高亮搜索结果)"></a>highlight search (高亮搜索结果)</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match&quot;: &#123;</span><br><span class="line">            &quot;product&quot;: &quot;producer&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;highlight&quot;: &#123;</span><br><span class="line">        &quot;fields&quot;: &#123;</span><br><span class="line">            &quot;product&quot;: &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 144 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/21/ElasticSearch/CRUD与集群管理/">CRUD与集群管理</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/21/ElasticSearch/CRUD与集群管理/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <div class="card">
+    
     <div class="card-image">
         <a href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/" class="image is-7by1">
             <img class="thumbnail" src="https://images.pexels.com/photos/1595850/pexels-photo-1595850.jpeg" alt="RabbitMQ 生产确认和消费确认(保证数据的幂等性)">
@@ -544,7 +643,7 @@
                             文章
                         </p>
                         <p class="title has-text-weight-normal">
-                            6
+                            8
                         </p>
                     
                 </a></div>
@@ -565,7 +664,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -696,7 +795,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+        <a href="/tags/ElasticSearch/" style="font-size: 15px;">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
     </div>
 </div>
 
@@ -712,6 +811,44 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/ElasticSearch/搜索方式/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搜索方式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">搜索方式</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CRUD与集群管理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">CRUD与集群管理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -770,44 +907,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/02/14/百度翻译API破解 基于Java和Selenium/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/982378/nature-milky-way-galaxy-stars-982378.jpeg" alt="百度翻译API破解 基于Java和Selenium">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T17:05:52.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/14/百度翻译API破解 基于Java和Selenium/" class="has-link-black-ter is-size-6">百度翻译API破解 基于Java和Selenium</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/12/Python-基础/Day2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1309017/pexels-photo-1309017.jpeg" alt="Day2 集合">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T10:02:46.000Z">2019-02-12</time></div>
-                    <a href="/2019/02/12/Python-基础/Day2/" class="has-link-black-ter is-size-6">Day2 集合</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Python-基础/">Python 基础</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -826,7 +925,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -843,6 +942,13 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ElasticSearch/">
+                        <span class="tag">ElasticSearch</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
@@ -920,6 +1026,44 @@
         
         <article class="media">
             
+            <a href="/2019/02/21/ElasticSearch/搜索方式/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搜索方式">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">搜索方式</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CRUD与集群管理">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">CRUD与集群管理</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://images.pexels.com/photos/1595850/pexels-photo-1595850.jpeg" alt="RabbitMQ 生产确认和消费确认(保证数据的幂等性)">
@@ -975,44 +1119,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/02/14/百度翻译API破解 基于Java和Selenium/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/982378/nature-milky-way-galaxy-stars-982378.jpeg" alt="百度翻译API破解 基于Java和Selenium">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T17:05:52.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/14/百度翻译API破解 基于Java和Selenium/" class="has-link-black-ter is-size-6">百度翻译API破解 基于Java和Selenium</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/12/Python-基础/Day2/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://images.pexels.com/photos/1309017/pexels-photo-1309017.jpeg" alt="Day2 集合">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T10:02:46.000Z">2019-02-12</time></div>
-                    <a href="/2019/02/12/Python-基础/Day2/" class="has-link-black-ter is-size-6">Day2 集合</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Python-基础/">Python 基础</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1031,7 +1137,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1048,6 +1154,13 @@
                 标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ElasticSearch/">
+                        <span class="tag">ElasticSearch</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Java/">
