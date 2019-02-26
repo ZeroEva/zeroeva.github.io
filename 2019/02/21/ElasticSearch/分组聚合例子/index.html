@@ -2,18 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: Java - ZeroEva</title>
+<title>ElasticSearch 分组聚合 - ZeroEva</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ZeroEva">
-<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
+    <meta name="description" content="一些例子">
+<meta name="keywords" content="java,ElasticSearch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch 分组聚合">
+<meta property="og:url" content="http://yoursite.com/2019/02/21/ElasticSearch/分组聚合例子/index.html">
 <meta property="og:site_name" content="ZeroEva">
+<meta property="og:description" content="一些例子">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-26T07:35:43.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZeroEva">
+<meta name="twitter:title" content="ElasticSearch 分组聚合">
+<meta name="twitter:description" content="一些例子">
 
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                <img src="/images/favicon.png" alt="ElasticSearch 分组聚合" height="28">
             
             </a>
         </div>
@@ -135,67 +140,90 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-image">
-        <a href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/" class="image is-7by1">
-            <img class="thumbnail" src="https://images.pexels.com/photos/1595850/pexels-photo-1595850.jpeg" alt="RabbitMQ 生产确认和消费确认(保证数据的幂等性)">
-        </a>
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/1743375/pexels-photo-1743375.jpeg" alt="ElasticSearch 分组聚合">
+        </span>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-18T15:22:28.000Z">2019-02-18</time>
+                <time class="level-item has-text-grey" datetime="2019-02-21T14:22:36.000Z">2019-02-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/MQ/">MQ</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/MQ/RabbitMQ/">RabbitMQ</a>
+                <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 768 个字)
+                    2 分钟 读完 (大约 248 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/">RabbitMQ 生产确认和消费确认(保证数据的幂等性)</a>
+                ElasticSearch 分组聚合
             
         </h1>
         <div class="content">
-            <h1 id="生产确认"><a href="#生产确认" class="headerlink" title="生产确认"></a>生产确认</h1><p>在生产者生产数据之后发送到RabbitMQ服务器之后，为了确认服务器接收到没，RabbitMQ提供了两个方式：  </p>
-<ul>
-<li>AMQP 中的事务机制</li>
-<li>服务器Confirm模式</li>
+            <h1 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h1><a id="more"></a>
+<h4 id="分组聚合"><a href="#分组聚合" class="headerlink" title="分组聚合"></a>分组聚合</h4><ul>
+<li><p>计算某个tags的商品数量</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;size&quot;: 0,</span><br><span class="line">    &quot;aggs&quot;: &#123;</span><br><span class="line">        &quot;group_by_tag&quot;: &#123;</span><br><span class="line">            &quot;terms&quot;: &#123;</span><br><span class="line">                &quot;field&quot;: &quot;tags&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">此处需修先改索引配置:</span><br><span class="line">PUT /goods/_mapping/product</span><br><span class="line">&#123;</span><br><span class="line">    &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;tags&quot;: &#123;</span><br><span class="line">            &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">            &quot;fielddata&quot;: true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对名称中包含yagao的商品计算每个tags下的商品数量<br>先搜索，再分析</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;size&quot;: 0,</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match&quot;: &#123;</span><br><span class="line">            &quot;name&quot;: &quot;yagao&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;aggs&quot;: &#123;</span><br><span class="line">        &quot;all_tags&quot;: &#123;</span><br><span class="line">            &quot;terms&quot;: &#123;</span><br><span class="line">                &quot;field&quot;: &quot;tags&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>先分组，再计算每组的平均值，计算每个tags下的商品的平均价格</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;size&quot;: 0,</span><br><span class="line">    &quot;aggs&quot;: &#123;</span><br><span class="line">        &quot;group_by_tags&quot;: &#123;</span><br><span class="line">            &quot;terms&quot;: &#123;</span><br><span class="line">                &quot;field&quot;: &quot;tags&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;aggs&quot;: &#123;</span><br><span class="line">                &quot;avg_price&quot;: &#123;</span><br><span class="line">                    &quot;avg&quot;: &#123;</span><br><span class="line">                        &quot;field&quot;:&quot;price&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再将上面的结果进行降序排序</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;size&quot;: 0,</span><br><span class="line">    &quot;aggs&quot;: &#123;</span><br><span class="line">        &quot;group_by_tags&quot;: &#123;</span><br><span class="line">            &quot;terms&quot;: &#123;</span><br><span class="line">                &quot;field&quot;: &quot;tags&quot;,</span><br><span class="line">                &quot;order&quot;: &#123;</span><br><span class="line">                    &quot;avg_price&quot;: &quot;desc&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;aggs&quot;: &#123;</span><br><span class="line">                &quot;avg_price&quot;: &#123;</span><br><span class="line">                    &quot;avg&quot;: &#123;</span><br><span class="line">                        &quot;field&quot;:&quot;price&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按照指定的价格范围区间进行分区，然后在每组内按照tags进行分组，最后在计算每组的平均价格</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;aggs&quot;: &#123;</span><br><span class="line">        &quot;group_by_price&quot;: &#123;</span><br><span class="line">            &quot;range&quot;: &#123;</span><br><span class="line">                &quot;field&quot;: &quot;price&quot;,</span><br><span class="line">                &quot;ranges&quot;: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;from&quot;: 10,</span><br><span class="line">                        &quot;to&quot;: 20</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;from&quot;: 20,</span><br><span class="line">                        &quot;to&quot;: 30</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;from&quot;: 30,</span><br><span class="line">                        &quot;to&quot;: 40</span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;aggs&quot;: &#123;</span><br><span class="line">                &quot;group_by_tags&quot;: &#123;</span><br><span class="line">                    &quot;terms&quot;: &#123;</span><br><span class="line">                        &quot;field&quot;: &quot;tags&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;aggs&quot;: &#123;</span><br><span class="line">                        &quot;avg_price&quot;: &#123;</span><br><span class="line">                            &quot;avg&quot;: &#123;</span><br><span class="line">                                &quot;field&quot;: &quot;price&quot;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/02/18/MQ/RabbitMQ/Consumer-Acknowledgements-and-Publisher-Confirms/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ElasticSearch/">ElasticSearch</a>, <a class="has-link-grey -link" href="/tags/java/">java</a>
                 </div>
             </div>
         </div>
         
+        
+        
+    </div>
+</div>
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/21/ElasticSearch/搜索方式/">
+                <span class="level-item">ElasticSearch 搜索方式</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
@@ -205,8 +233,39 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
 
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
 
 </div>
                 
@@ -861,7 +920,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.png" alt="ZeroEva" height="28">
+                    <img src="/images/favicon.png" alt="ElasticSearch 分组聚合" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -940,80 +999,6 @@ document.addEventListener('DOMContentLoaded', function () {
             inlineMath: [
                 ['$','$'],
                 ['\\(','\\)']
-            ]
-        }
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="回到顶端" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-    
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
-</body>
-</html>\\(','\\)']
             ]
         }
     });

@@ -2,23 +2,23 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>搜索方式 - ZeroEva</title>
+<title>ElasticSearch 搜索方式 - ZeroEva</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="搜索方式query string search搜索全部商品语法: GET /index/type/_search1GET /goods/product/_search query DSLDSL: Domain Specified Language 特定领域的语言语法: GET /index/type/_search查询符合条件的所有:1234567GET /goods/product/_searc">
+    <meta name="description" content="搜索方式">
 <meta name="keywords" content="ElasticSearch">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜索方式">
+<meta property="og:title" content="ElasticSearch 搜索方式">
 <meta property="og:url" content="http://yoursite.com/2019/02/21/ElasticSearch/搜索方式/index.html">
 <meta property="og:site_name" content="ZeroEva">
-<meta property="og:description" content="搜索方式query string search搜索全部商品语法: GET /index/type/_search1GET /goods/product/_search query DSLDSL: Domain Specified Language 特定领域的语言语法: GET /index/type/_search查询符合条件的所有:1234567GET /goods/product/_searc">
+<meta property="og:description" content="搜索方式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-21T04:18:32.240Z">
+<meta property="og:updated_time" content="2019-02-26T07:34:56.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搜索方式">
-<meta name="twitter:description" content="搜索方式query string search搜索全部商品语法: GET /index/type/_search1GET /goods/product/_search query DSLDSL: Domain Specified Language 特定领域的语言语法: GET /index/type/_search查询符合条件的所有:1234567GET /goods/product/_searc">
+<meta name="twitter:title" content="ElasticSearch 搜索方式">
+<meta name="twitter:description" content="搜索方式">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.png" alt="搜索方式" height="28">
+                <img src="/images/favicon.png" alt="ElasticSearch 搜索方式" height="28">
             
             </a>
         </div>
@@ -141,17 +141,27 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="https://images.pexels.com/photos/749983/nature-milky-way-stars-galaxy-749983.jpeg" alt="ElasticSearch 搜索方式">
+        </span>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time>
                 
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
+                </div>
+                
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 289 个字)
+                    2 分钟 读完 (大约 290 个字)
                 </span>
                 
                 
@@ -165,11 +175,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                搜索方式
+                ElasticSearch 搜索方式
             
         </h1>
         <div class="content">
-            <h1 id="搜索方式"><a href="#搜索方式" class="headerlink" title="搜索方式"></a>搜索方式</h1><h3 id="query-string-search"><a href="#query-string-search" class="headerlink" title="query string search"></a>query string search</h3><p>搜索全部商品<br>语法: GET /index/type/_search<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br></pre></td></tr></table></figure></p>
+            <h1 id="搜索方式"><a href="#搜索方式" class="headerlink" title="搜索方式"></a>搜索方式</h1><a id="more"></a>
+<h3 id="query-string-search"><a href="#query-string-search" class="headerlink" title="query string search"></a>query string search</h3><p>搜索全部商品<br>语法: GET /index/type/_search<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br></pre></td></tr></table></figure></p>
 <h3 id="query-DSL"><a href="#query-DSL" class="headerlink" title="query DSL"></a>query DSL</h3><p>DSL: Domain Specified Language 特定领域的语言<br>语法: GET /index/type/_search<br>查询符合条件的所有:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>查询并排序:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match&quot;: &#123;</span><br><span class="line">            &quot;name&quot;: &quot;yagao&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;sort&quot;: [</span><br><span class="line">        &#123;&quot;price&quot;: &quot;desc&quot;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>分页查询:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET /goods/product/_search</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot;: &#123;</span><br><span class="line">        &quot;match_all&quot;: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;from&quot;: 1,</span><br><span class="line">    &quot;size&quot;: 1</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -199,10 +210,17 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/21/ElasticSearch/分组聚合例子/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">ElasticSearch 分组聚合</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/21/ElasticSearch/CRUD与集群管理/">
-                <span class="level-item">CRUD与集群管理</span>
+                <span class="level-item">ElasticSearch CRUD与集群管理</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -292,7 +310,7 @@
                     
                     <p class="is-size-8 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-mobile"></i>
-                        <span>18547180218</span>
+                        <span>19910226822</span>
                     </p>
                     
                 </div>
@@ -307,7 +325,7 @@
                             文章
                         </p>
                         <p class="title has-text-weight-normal">
-                            8
+                            9
                         </p>
                     
                 </a></div>
@@ -318,7 +336,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -408,6 +426,14 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/ElasticSearch/">
+            <span class="level-start">
+                <span class="level-item">ElasticSearch</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/MQ/">
             <span class="level-start">
                 <span class="level-item">MQ</span>
@@ -459,7 +485,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/ElasticSearch/" style="font-size: 15px;">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+        <a href="/tags/ElasticSearch/" style="font-size: 20px;">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/RabbitMQ/" style="font-size: 10px;">RabbitMQ</a> <a href="/tags/django/" style="font-size: 10px;">django</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
     </div>
 </div>
 
@@ -478,18 +504,37 @@
         
         <article class="media">
             
+            <a href="/2019/02/21/ElasticSearch/分组聚合例子/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1743375/pexels-photo-1743375.jpeg" alt="ElasticSearch 分组聚合">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:22:36.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/分组聚合例子/" class="has-link-black-ter is-size-6">ElasticSearch 分组聚合</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/02/21/ElasticSearch/搜索方式/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搜索方式">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/749983/nature-milky-way-stars-galaxy-749983.jpeg" alt="ElasticSearch 搜索方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time></div>
-                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">搜索方式</a>
+                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">ElasticSearch 搜索方式</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
                     </p>
                 </div>
             </div>
@@ -499,16 +544,16 @@
             
             <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CRUD与集群管理">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1480393/pexels-photo-1480393.jpeg" alt="ElasticSearch CRUD与集群管理">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time></div>
-                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">CRUD与集群管理</a>
+                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">ElasticSearch CRUD与集群管理</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
                     </p>
                 </div>
             </div>
@@ -552,25 +597,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/02/14/Django/Day1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://files.catbox.moe/1q1vyy.jpg" alt="Day1">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-14T15:35:57.000Z">2019-02-14</time></div>
-                    <a href="/2019/02/14/Django/Day1/" class="has-link-black-ter is-size-6">Day1</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Python-Web/">Python Web</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -589,7 +615,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -610,7 +636,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ElasticSearch/">
                         <span class="tag">ElasticSearch</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -645,7 +671,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -690,18 +716,37 @@
         
         <article class="media">
             
+            <a href="/2019/02/21/ElasticSearch/分组聚合例子/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1743375/pexels-photo-1743375.jpeg" alt="ElasticSearch 分组聚合">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T14:22:36.000Z">2019-02-21</time></div>
+                    <a href="/2019/02/21/ElasticSearch/分组聚合例子/" class="has-link-black-ter is-size-6">ElasticSearch 分组聚合</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/02/21/ElasticSearch/搜索方式/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搜索方式">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/749983/nature-milky-way-stars-galaxy-749983.jpeg" alt="ElasticSearch 搜索方式">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T11:25:36.000Z">2019-02-21</time></div>
-                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">搜索方式</a>
+                    <a href="/2019/02/21/ElasticSearch/搜索方式/" class="has-link-black-ter is-size-6">ElasticSearch 搜索方式</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
                     </p>
                 </div>
             </div>
@@ -711,16 +756,16 @@
             
             <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CRUD与集群管理">
+                    <img class="thumbnail" src="https://images.pexels.com/photos/1480393/pexels-photo-1480393.jpeg" alt="ElasticSearch CRUD与集群管理">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-21T10:58:48.000Z">2019-02-21</time></div>
-                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">CRUD与集群管理</a>
+                    <a href="/2019/02/21/ElasticSearch/CRUD与集群管理/" class="has-link-black-ter is-size-6">ElasticSearch CRUD与集群管理</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/ElasticSearch/">ElasticSearch</a>
                     </p>
                 </div>
             </div>
@@ -764,25 +809,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/02/14/Django/Day1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://files.catbox.moe/1q1vyy.jpg" alt="Day1">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-14T15:35:57.000Z">2019-02-14</time></div>
-                    <a href="/2019/02/14/Django/Day1/" class="has-link-black-ter is-size-6">Day1</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Python-Web/">Python Web</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -801,7 +827,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -822,7 +848,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/ElasticSearch/">
                         <span class="tag">ElasticSearch</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -857,7 +883,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -894,7 +920,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.png" alt="搜索方式" height="28">
+                    <img src="/images/favicon.png" alt="ElasticSearch 搜索方式" height="28">
                 
                 </a>
                 <p class="is-size-7">
